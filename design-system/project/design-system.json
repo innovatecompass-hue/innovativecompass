@@ -1,0 +1,25 @@
+{
+ "v": 3,
+ "layout": "files",
+ "createdOnFiles": {
+  "v": 1,
+  "at": "2026-10-15T01:24:57Z"
+ },
+ "title": "Innovative Compass",
+ "namespace": "InnovativeCompass",
+ "libraries": [],
+ "sections": {},
+ "groups": [],
+ "assetGroups": {},
+ "blobs": {},
+ "docs": {
+  "readme": "project/README.md",
+  "sections": []
+ },
+ "lastChange": {
+  "by": "Claude",
+  "at": "2026-10-15T01:24:57Z",
+  "via": "GitHub · innovatecompass-hue/innovativecompass@9eb4938",
+  "note": "First sync from styles.css and the three pages: 30 colours, 27 type styles, 21 spacing steps, 20 components."
+ }
+}

@@ -1,0 +1,53 @@
+<!-- @dsCard height=288 -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Innovative Compass</title>
+<style>
+  html, body { margin: 0; height: 100%; }
+  html body { background: var(--surface); color: var(--text); overflow: hidden; }
+  .cover { position: relative; height: 288px; overflow: hidden; }
+  /* the composition: a 480-wide box on the right half of the 960 layout, clear of the name */
+  .art { position: absolute; top: 0; left: 480px; width: 480px; height: 288px; overflow: hidden; }
+  .art svg { display: block; }
+  .slab { fill: var(--surface-inverse); }
+  .band { fill: var(--bone); }
+  .gold { fill: var(--gold); }
+  .sq { rx: var(--radius-none); }
+  .numeral { fill: var(--gold); font-family: var(--font-serif); font-weight: 400; font-size: 240px; }
+  .rule { stroke: var(--gold); stroke-width: var(--hairline-width); }
+  /* name and tagline pinned bottom-left on the ground */
+  .words { position: absolute; left: var(--space-40); bottom: var(--space-40); max-width: 440px; }
+  .name { margin: 0; font-family: var(--font-serif); font-weight: 400; font-size: 76px; line-height: .95; letter-spacing: -0.015em; color: var(--text); }
+  .tag { margin: var(--space-16) 0 0; font-family: var(--font-sans); font-size: 14px; line-height: 20px; color: var(--text-muted); }
+</style>
+</head>
+<body>
+<div class="cover">
+<div class="art" aria-hidden="true">
+<svg viewBox="0 0 480 288" width="480" height="288">
+<!--
+  blocks      surface-inverse slab 416×192 bled off the top and right (the dark band) · bone band 416×88 bled off the bottom and right (the alternate light band) · gold 40×40, the accent's only solid · ≈42% of 960×288
+  arrangement a strip of unequal horizontal bands like the site's section rhythm (dark, then light, then bone), stacked right with a space-64 margin of ground
+  pattern     editorial hairlines, from "Every rule is hairline-width; separate items with a top border": the gold process line across the band seam and three 40px eyebrow dashes on the ground; plus one oversized Playfair "01" in gold clipped by the slab, from "Numerals are Playfair in gold"
+  scales      margin space-64; band seam space-16; square and dashes space-40; dash pitch space-24; rules hairline-width; corners radius-none
+-->
+<defs><clipPath id="slab-clip"><rect x="64" y="-8" width="424" height="192"/></clipPath></defs>
+<rect class="slab sq" x="64" y="-8" width="424" height="192"/>
+<text class="numeral" x="216" y="252" clip-path="url(#slab-clip)">01</text>
+<rect class="band sq" x="64" y="200" width="424" height="96"/>
+<rect class="gold sq" x="0" y="224" width="40" height="40"/>
+<line class="rule" x1="0" y1="192.5" x2="480" y2="192.5"/>
+<line class="rule" x1="12" y1="24.5" x2="52" y2="24.5"/>
+<line class="rule" x1="12" y1="48.5" x2="52" y2="48.5"/>
+<line class="rule" x1="12" y1="72.5" x2="52" y2="72.5"/>
+</svg>
+</div>
+<div class="words">
+<h1 class="name">Innovative<br>Compass</h1>
+<p class="tag">The quiet operators behind ambitious companies.</p>
+</div>
+</div>
+</body>
+</html>

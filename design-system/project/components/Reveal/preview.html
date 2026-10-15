@@ -1,0 +1,30 @@
+<!-- @dsCard group="Motion" height=300 width=960 subtitle="Fade-up on scroll, 80ms stagger" -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Reveal — preview</title>
+</head>
+<body>
+<section class="cream" style="padding: 48px 0;">
+  <div class="container">
+    <span class="eyebrow reveal">The Method</span>
+    <h2 class="reveal d1" style="margin: 24px 0 16px;">How we work.</h2>
+    <p class="reveal d2">A deliberate sequence. Diagnosis before design. Design before build.</p>
+    <p class="reveal d3" style="margin-top: 24px;"><button type="button" class="cta" id="replay">Replay <span class="arrow">→</span></button></p>
+  </div>
+</section>
+<script>
+  var IC = window.InnovativeCompass, els = document.querySelectorAll('.reveal');
+  function run() {
+    if (IC && IC.reveal) IC.reveal();
+    else els.forEach(function (e) { e.classList.add('visible'); });
+  }
+  run();
+  document.getElementById('replay').addEventListener('click', function () {
+    els.forEach(function (e) { e.classList.remove('visible'); });
+    setTimeout(run, 750);
+  });
+</script>
+</body>
+</html>
