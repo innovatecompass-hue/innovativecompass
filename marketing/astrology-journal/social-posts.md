@@ -106,6 +106,26 @@ Venus shows what you're drawn to, and why the pattern keeps repeating. Read your
 
 ---
 
+## Reel 1: Not until Mercury goes direct (ready to run, on hold)
+
+**On hold** until the Innovative Compass Higgsfield account or workspace is connected. Don't spend client credits on this.
+
+**Format:** 10 seconds, 9:16, the characters speak their lines. Post on the day Mercury goes retrograde (around October 24, 2026).
+
+**Steps (about 28 credits):**
+1. If Vela & Lyra aren't in the new account yet, import the design image (`9d46bfbc-956b-4cdd-9d84-37faa51b8925`, or its URL) and save it as the Element again.
+2. Start frame: GPT Image 2.5, 9:16, quality high, 2k, design image as reference. Moon terrace setting, no speech bubbles. Lyra on the left with a pearlescent rolling suitcase and iridescent sunglasses, a sleek pearl-white ship pod waiting at the end of the terrace. Vela on the right reclining on a white lounger with a glowing holographic star chart. (2.75 credits)
+3. Video: Kling 3.0, mode pro, 10 s, sound on, start image = the frame from step 2. (25 credits)
+
+**Video prompt:**
+> Lyra rolls the suitcase a few steps toward the ship pod, turns her head and asks brightly: "Should we visit Earth this week?" Vela doesn't look up from the glowing star chart and answers in a calm, dry voice: "Not until Mercury goes direct." Lyra stops, sighs, slowly turns the suitcase around and rolls it back to the lounger. Gentle cinematic camera push-in, soft twinkling sparkles, the giant ringed planet glowing in the sky. Elegant, deadpan, photorealistic.
+
+Add the dialogue as on-screen captions in Instagram or CapCut. Text that video models burn into the picture comes out warped.
+
+**Caption:** Even the aliens are rescheduling. 🛸 Mercury goes retrograde this week. Find out what Mercury runs in YOUR chart in the free Astrology Journal (link in bio).
+
+---
+
 ## Planet cards: the view from Vela & Lyra's lounge (retired)
 
 *Didn't work: the window frames cut through the planets. Kept for the record; don't reuse this concept.*
