@@ -374,6 +374,28 @@ h3 {
 .success .btn { margin-top: 4px; }
 .success .form-note { margin-top: 14px; }
 
+.upsell {
+  margin-top: 30px;
+  padding-top: 26px;
+  border-top: 1px dashed rgba(43, 34, 54, 0.25);
+}
+.upsell h4 {
+  margin: 14px 0 8px;
+  font-family: var(--display);
+  font-size: 1.45rem;
+  font-weight: 400;
+  line-height: 1.2;
+}
+.upsell p { font-size: 1.08rem; line-height: 1.5; }
+
+.btn-outline {
+  background: transparent;
+  color: var(--ink);
+  border: 1.5px solid var(--ink);
+  box-shadow: none;
+}
+.btn-outline:hover { background: var(--ink); color: var(--cream); box-shadow: none; }
+
 /* ---------- Sound familiar ---------- */
 
 .familiar {

@@ -4,14 +4,14 @@
 // Environment variables (Vercel → Project → Settings → Environment Variables):
 //   GHL_API_KEY       Private Integration token with the contacts.write scope
 //   GHL_LOCATION_ID   The Innovative Compass sub-account (location) ID
-//   JOURNAL_PDF_URL   Public link to the PDF (e.g. GHL Media Library); defaults to the copy in /astrology-journal
+//   JOURNAL_PDF_URL   Public link to the PDF (e.g. GHL Media Library); defaults to /astrology-journal.pdf
 
 const GHL_BASE = 'https://services.leadconnectorhq.com';
 const GHL_VERSION = '2021-07-28';
 const SIGNS = ['aries', 'taurus', 'gemini', 'cancer', 'leo', 'virgo', 'libra', 'scorpio', 'sagittarius', 'capricorn', 'aquarius', 'pisces'];
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-const pdfUrl = () => process.env.JOURNAL_PDF_URL || '/astrology-journal/astrology-journal.pdf';
+const pdfUrl = () => process.env.JOURNAL_PDF_URL || '/astrology-journal.pdf';
 
 async function ghl(path, body) {
   const res = await fetch(`${GHL_BASE}${path}`, {
