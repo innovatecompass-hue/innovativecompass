@@ -56,7 +56,59 @@ Mercury retrograde happens about three times a year. Want to know what Mercury a
 
 ---
 
-## Planet cards: the view from Vela & Lyra's lounge
+## Series 2: the moon terrace
+
+Open-air palace terrace on a moon colony at twilight, reflecting pool, planets in the open sky (no window frames). This is the setting to keep using.
+
+### Post 4: What's a Rising sign?
+**On-image text:** "What's a Rising sign?" / "Their first impression. The rest takes three dates."
+**Higgsfield job:** `f3e49027-7e63-4ee8-88ea-fcac14a48743`
+
+**Caption:**
+Your Rising sign is the mask you wear when you walk into a room. Your Sun and Moon show up a little later. 😌
+
+Start with your Rising in the free Astrology Journal. Link in bio.
+
+#risingsign #ascendant #astrology #bigthree #astrologyjournal
+
+### Post 5: Moon signs
+**On-image text:** "Why are you studying their Moon signs?" / "Their Sun signs explain nothing."
+**Higgsfield job:** `da1269ef-a5e7-4cc5-bb40-9afaa296aade`
+
+**Caption:**
+Same Sun sign, completely different person? Blame the Moon. It's who you are at 2 a.m., and it explains more than your Sun ever will.
+
+Meet your Moon in the free Astrology Journal. Link in bio. 🌙
+
+#moonsign #astrology #bigthree #birthchart #astrologyjournal
+
+### Post 6: Gemini Moon
+**On-image text:** "That human checked their horoscope eleven times today." / "Gemini Moon. Let them."
+**Higgsfield job:** `62275e85-f08f-422e-a07f-9db5ab404bcc`
+
+**Caption:**
+Tag the friend who refreshes their horoscope app like it owes them money. 📱
+
+A Gemini Moon needs information to feel calm. Find out what yours needs in the free Astrology Journal (link in bio).
+
+#geminimoon #gemini #astrology #astrologymemes #astrologyjournal
+
+### Post 7: Same Venus pattern
+**On-image text:** "Why does that human keep dating the same person?" / "Different face. Same Venus pattern."
+**Higgsfield job:** `6aa7b43f-baf8-48c0-8a55-fd90684dd16d`
+
+**Caption:**
+If your exes could start a group chat, your Venus sign would be the admin. 💌
+
+Venus shows what you're drawn to, and why the pattern keeps repeating. Read yours in the free Astrology Journal. Link in bio.
+
+#venus #venussign #astrology #dating #astrologyjournal
+
+---
+
+## Planet cards: the view from Vela & Lyra's lounge (retired)
+
+*Didn't work: the window frames cut through the planets. Kept for the record; don't reuse this concept.*
 
 No characters. One planet fills the art-deco window, with the planet's name and a one-line meaning on a white card. These pair with the "Meet Your Planets" emails: post the card the same week the email goes out, or put all ten in one carousel.
 
