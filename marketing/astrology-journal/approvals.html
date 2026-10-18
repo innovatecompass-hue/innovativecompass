@@ -78,8 +78,15 @@ textarea { width: 100%; min-height: 44px; resize: vertical; border: 1px solid va
 
 <header class="bar gutter">
   <div class="wrap">
-    <h1>November posts</h1>
+    <h1>Posts for approval</h1>
     <div class="counts" id="counts"></div>
+    <div class="quality">
+      <span>Month</span>
+      <div class="seg" role="group" aria-label="Month">
+        <button type="button" id="m-nov" data-month="nov" aria-pressed="false">November</button>
+        <button type="button" id="m-dec" data-month="dec" aria-pressed="false">December</button>
+      </div>
+    </div>
   </div>
 </header>
 
@@ -95,6 +102,7 @@ textarea { width: 100%; min-height: 44px; resize: vertical; border: 1px solid va
 const A = "https://d8j0ntlcm91z4.cloudfront.net/user_3KTjtcnTBQnk5ZC8kTxYiFrjgMf/";
 const B = "https://d8j0ntlcm91z4.cloudfront.net/user_3ENivLOclJVJbkv7uxXpYHS28vy/";
 const TERRACE = "Moon terrace", LOUNGE = "Starship lounge", GARDEN = "Zodiac garden", YACHT = "Space yacht";
+const ICE = "Ice palace", ROOF = "City rooftop", GALA = "Yacht gala";
 
 // The month's plan. `images` is a list of [label, url]; empty means not generated yet.
 const POSTS = [
@@ -128,13 +136,46 @@ const POSTS = [
   ["nov-28", "Sat · Nov 28", YACHT, "That Aquarius says they're not like other humans.", "We checked. They're right.", "To every Aquarius who says they're not like other humans: we checked. You're right. 👽\n#aquarius #astrology #astrologymemes", [["Open full size", B + "hf_20261018_051456_b92356ee-8e76-4e31-a5b8-1c53e09c7e61.png"]]],
   ["nov-29", "Sun · Nov 29", YACHT, "That Sagittarius said they'd be right back.", "In 2019.", "A Sagittarius \"be right back\" can last a few years. 🌍\nTag the friend who's always somewhere else.\n#sagittarius #astrology #astrologymemes", [["Open full size", B + "hf_20261018_051521_1a337d8e-5c5e-44e2-849e-5f9c5d8bfd6a.png"]]],
   ["nov-30", "Mon · Nov 30", YACHT, "How do humans learn their whole chart?", "There's a free journal. Ninety-one pages.", "You've met your Sun sign. Now meet the other nine planets, the twelve houses and your Nodes. 📖\nThe 91-page Astrology Journal is free. Link in bio.\n#astrologyjournal #birthchart #astrology", [["Open full size", B + "hf_20261018_051520_654aca9a-b553-49cf-a192-e6fc8e90093e.png"]]],
+  ["dec-01", "Tue · Dec 1", ICE, "Humans are already writing New Year's resolutions.", "Cute. Their Saturn has notes.", "Writing resolutions in December? Bold. Your Saturn would like a word. 📝\nFind out what Saturn actually wants from you in the free Astrology Journal (link in bio).\n#newyearsresolutions #saturn #astrology #astrologymemes", [["Open full size", B + "hf_20261018_233808_c057a8bc-5b69-4030-a887-6f733121c60f.png"]]],
+  ["dec-02", "Wed · Dec 2", ICE, "That Sagittarius is oversharing again.", "Honesty is their love language. Tact is not.", "Sagittarius: brutally honest, accidentally rude, somehow still invited to everything. 🏹\nTag the Sag who told you the truth nobody asked for.\n#sagittarius #sagittariusseason #astrology #astrologymemes", [["Open full size", B + "hf_20261018_233808_5237b142-3e3b-4868-953f-d1c0633f43b4.png"]]],
+  ["dec-03", "Thu · Dec 3", ICE, "Should we tell them Mercury isn't retrograde anymore?", "And lose their favorite excuse? Never.", "Mercury's been direct for weeks. Your excuses haven't. 💅\n#mercuryretrograde #astrology #astrologymemes", [["Open full size", B + "hf_20261018_233808_e2b1d6e2-5311-4f82-bcd5-79f1280b839f.png"]]],
+  ["dec-04", "Fri · Dec 4", ICE, "That Gemini has two opinions about this.", "Only two? They're holding back.", "Geminis don't have opinions. They have a rotating cast. 🎭\nTag the Gemini who agreed with both sides.\n#gemini #astrology #astrologymemes", [["Open full size", B + "hf_20261018_233808_9bd5e41f-c0e7-4989-9a29-7e88402b3b48.png"]]],
+  ["dec-05", "Sat · Dec 5", ICE, "Why is that Scorpio smiling?", "They remembered something you said in 2014.", "A Scorpio never forgets. They don't even try. 🦂\nTag the Scorpio who still has the receipts.\n#scorpio #astrology #astrologymemes", [["Open full size", B + "hf_20261018_234015_46b35eb4-b406-4ac4-ab30-ae7f64c1dc58.png"]]],
+  ["dec-06", "Sun · Dec 6", ICE, "Is that Leo looking at us?", "No. They're looking at their reflection in us.", "Leos don't look in mirrors. Mirrors look at Leos. 🦁\nTag your favorite Leo (they're already waiting).\n#leo #astrology #astrologymemes", [["Open full size", B + "hf_20261018_234015_8e2c122f-d78f-4ddd-9255-db5b5996540f.png"]]],
+  ["dec-07", "Mon · Dec 7", ICE, "That Taurus won't share their dessert.", "Correct. And they'd do it again.", "Taurus sharing dessert? In this economy? 🍰\nYour Venus sign explains exactly what you won't share. Free Astrology Journal, link in bio.\n#taurus #venus #astrology #astrologymemes", [["Open full size", B + "hf_20261018_234015_1197cfcc-0b47-4a3f-9bb2-218c77772a59.png"]]],
+  ["dec-08", "Tue · Dec 8", ICE, "Why does that Virgo look disappointed?", "They saw your inbox.", "Virgos aren't judging you. They're auditing you. 📋\nTag the Virgo with zero unread emails.\n#virgo #astrology #astrologymemes", [["Open full size", B + "hf_20261018_234016_64c4888a-1e21-4f05-bc6a-a3339317b904.png"]]],
+  ["dec-09", "Wed · Dec 9", ICE, "New Moon. Time for new intentions.", "Their last ones are still on read.", "New Moon, new intentions. Maybe finish the old ones first? 🌑\n#newmoon #astrology #manifesting\n(Check the New Moon date before posting.)", [["Open full size", B + "hf_20261018_234123_471ccfbc-921c-4424-bb12-9c7589122bb1.png"]]],
+  ["dec-10", "Thu · Dec 10", ICE, "That Aries just challenged a planet.", "The planet blinked first.", "Aries doesn't pick fights. Aries finishes them. 🔥\nTag the Aries who argued with a GPS.\n#aries #astrology #astrologymemes", [["Open full size", B + "hf_20261018_234121_8a0151b6-0ffa-4c78-8da7-ece2243e08cf.png"]]],
+  ["dec-11", "Fri · Dec 11", ROOF, "That Libra said 'I don't mind, you pick.'", "They mind. They very much mind.", "\"I don't mind, you pick\" is Libra for \"choose wrong and see what happens.\" ⚖️\n#libra #astrology #astrologymemes", [["Open full size", B + "hf_20261018_234122_0c071a3f-7353-49fd-899a-0f7dd514354b.png"]]],
+  ["dec-12", "Sat · Dec 12", ROOF, "Why is that Cancer bringing snacks to the party?", "So everyone owes them emotionally.", "Cancers don't bring snacks. They bring leverage. 🥨\nTag the friend who mothers the whole party.\n#cancer #astrology #astrologymemes", [["Open full size", B + "hf_20261018_234121_c5364b5c-7b53-46ed-ba78-512daf7b93b4.png"]]],
+  ["dec-13", "Sun · Dec 13", ROOF, "That Capricorn is networking at a holiday party.", "It's not a party. It's a quarterly review.", "Capricorns don't attend holiday parties. They attend opportunities. 📈\n#capricorn #astrology #astrologymemes", [["Open full size", B + "hf_20261018_234228_a3a91f45-daf4-47a7-8f9c-5334119fd5b2.png"]]],
+  ["dec-14", "Mon · Dec 14", ROOF, "That Aquarius left the party early.", "They were never really here.", "Aquarius left without saying goodbye. Classic. They'll text you a theory at 3 a.m. 👽\n#aquarius #astrology #astrologymemes", [["Open full size", B + "hf_20261018_234228_b411f5c6-c100-4b14-b9db-325ad5ace42c.png"]]],
+  ["dec-15", "Tue · Dec 15", ROOF, "That Pisces cried at the office party.", "Twice. And left with three new best friends.", "Pisces at the office party: cried twice, adopted three coworkers, regrets nothing. 🌊\n#pisces #astrology #astrologymemes", [["Open full size", B + "hf_20261018_234228_27d7a1a7-c022-462a-8edc-de6a05a932c5.png"]]],
+  ["dec-16", "Wed · Dec 16", ROOF, "Why do humans read their horoscope but ignore it?", "They want the vibe, not the homework.", "Reading your horoscope is the vibe. Reading your whole chart is the homework. 📖\nDo the homework: the free 91-page Astrology Journal is in our bio.\n#horoscope #birthchart #astrology #astrologyjournal", [["Open full size", B + "hf_20261018_234228_8611702e-31ca-430e-a194-05ef76ef3d4e.png"]]],
+  ["dec-17", "Thu · Dec 17", ROOF, "Do humans know their Rising sign is showing?", "It walked in ten minutes before they did.", "Your Rising sign arrives first. You're just the plus-one. ✨\nStart with your Rising in the free Astrology Journal (link in bio).\n#risingsign #ascendant #astrology", [["Open full size", B + "hf_20261018_234328_c848479b-6d00-49d7-96e5-3cda2c14ca09.png"]]],
+  ["dec-18", "Fri · Dec 18", ROOF, "That human says astrology isn't real.", "Said every Capricorn Sun with a Scorpio Moon.", "\"Astrology isn't real,\" said the most Capricorn person alive. 🙄\nTag your skeptic friend. We'll wait.\n#capricorn #scorpio #astrology #astrologymemes", [["Open full size", B + "hf_20261018_234328_56913ab9-1083-4e12-95c7-e0e94d4df535.png"]]],
+  ["dec-19", "Sat · Dec 19", ROOF, "Why is everyone so tired?", "It's the end of the year. Saturn is collecting.", "End-of-year exhaustion isn't burnout. It's Saturn collecting. 🪐\n#saturn #astrology #astrologymemes", [["Open full size", B + "hf_20261018_234329_8488e770-caf9-4172-8bb0-c41ce6eb7584.png"]]],
+  ["dec-20", "Sun · Dec 20", ROOF, "That Leo bought themselves a gift.", "From everyone. On behalf of everyone.", "A Leo's favorite gift? The one they bought themselves. From you. 🎁\n#leo #astrology #astrologymemes", [["Open full size", B + "hf_20261018_234328_68da96ea-f71a-4622-837d-1c51abd21689.png"]]],
+  ["dec-21", "Mon · Dec 21", ROOF, "It's Capricorn season.", "Fun is now scheduled. In 15-minute blocks.", "Capricorn season starts today. Fun has been rescheduled. 🐐\n#capricornseason #capricorn #wintersolstice #astrology\n(Check the date before posting.)", [["Open full size", B + "hf_20261018_234423_00c33475-c620-4ce8-a194-cedb1b4e26f6.png"]]],
+  ["dec-22", "Tue · Dec 22", GALA, "That Capricorn brought a business plan to the party.", "Five years. Color-coded.", "Capricorns don't do small talk. They do five-year plans. 📊\n#capricornseason #capricorn #astrology", [["Open full size", B + "hf_20261018_234451_4c83ab4d-6f2f-41fe-b483-c8a7794b9285.png"]]],
+  ["dec-23", "Wed · Dec 23", GALA, "Why is that human hiding from their family?", "Moon in the 4th house. It's complicated.", "The 4th house rules home and family. Some charts call it home. Some call it the situation. 🏠\nFind your 4th house in the free Astrology Journal (link in bio).\n#astrologyhouses #astrology #holidays", [["Open full size", B + "hf_20261018_234452_130639a1-ed10-4cfa-b8ec-8c5093959930.png"]]],
+  ["dec-24", "Thu · Dec 24", GALA, "A Full Moon over the holidays?", "Every family secret just got a spotlight.", "Full Moon over the holidays. Bring snacks. Bring patience. 🌕\n#fullmoon #astrology #holidays\n(Check the Full Moon date before posting.)", [["Open full size", B + "hf_20261018_234452_3ae98482-8685-4b7b-8e57-0d6a8580c049.png"]]],
+  ["dec-25", "Fri · Dec 25", GALA, "Humans exchanged gifts today.", "The Venus signs were judging the wrapping.", "Happy holidays from two aliens who are definitely judging your wrapping. 🎀\n#holidays #venus #astrology #astrologymemes", [["Open full size", B + "hf_20261018_234531_acf55a76-731e-4083-9a5a-03130103e47d.png"]]],
+  ["dec-26", "Sat · Dec 26", GALA, "That human is returning every gift.", "Virgo Venus. Nothing was quite right.", "Virgo Venus energy: grateful, gracious, and at the returns counter by 9 a.m. 🧾\n#virgo #venus #astrology #astrologymemes", [["Open full size", B + "hf_20261018_234558_9480b8c8-b040-4749-865d-c4dba57fe37c.png"]]],
+  ["dec-27", "Sun · Dec 27", GALA, "That Sagittarius booked a flight for tomorrow.", "Destination: anywhere without relatives.", "Sagittarius after three days of family time: ✈️\n#sagittarius #astrology #astrologymemes", [["Open full size", B + "hf_20261018_234558_06d7577e-7395-40cb-930d-763217375d46.png"]]],
+  ["dec-28", "Mon · Dec 28", GALA, "Why is that human already planning next year?", "Capricorn Moon. This year was a rough draft.", "Capricorn Moons don't reflect on the year. They grade it. 📝\n#capricorn #moonsign #astrology", [["Open full size", B + "hf_20261018_234558_f6305884-6795-429f-8f3a-903f79da0840.png"]]],
+  ["dec-29", "Tue · Dec 29", GALA, "Will humans keep their resolutions?", "Until mid-January. Mars gets bored.", "New year, new you. Until about January 15th. 🏃\nFind out what your Mars needs to stay motivated in the free Astrology Journal (link in bio).\n#newyearsresolutions #mars #astrology", [["Open full size", B + "hf_20261018_234615_b8b40967-340d-47df-a86d-546d022eb9e2.png"]]],
+  ["dec-30", "Wed · Dec 30", GALA, "That human says next year will be different.", "Same chart, babe. Different transits.", "New year, same birth chart. Might as well learn to read it. 📖\nThe free 91-page Astrology Journal is in our bio.\n#newyear #birthchart #astrology #astrologyjournal", [["Open full size", B + "hf_20261018_234737_31c4cc74-1de8-4c14-a7eb-6b15b4ebbd4a.png"]]],
+  ["dec-31", "Thu · Dec 31", GALA, "What should humans do next year?", "Read their whole chart. Not just one page.", "Our only New Year's advice: read the whole book this time. ✨ Happy New Year from Vela & Lyra.\nYour free 91-page Astrology Journal is in our bio.\n#newyearseve #astrology #astrologyjournal", [["Open full size", B + "hf_20261018_234658_9a1044b7-1381-464c-8471-6332e2406e29.png"]]],
 ].map(([id, date, setting, left, right, caption, images]) => ({ id, date, setting, left, right, caption, images }));
 
 const grid = document.getElementById("grid");
 const countsEl = document.getElementById("counts");
 const notice = document.getElementById("notice");
 let reviews = {};
-let quality = null;
+let month = "dec";
+try { month = localStorage.getItem("approvals-month") || "dec"; } catch {}
+const shown = () => POSTS.filter((p) => p.id.startsWith(month));
 let db = null;
 const pending = {}; // one write at a time per document
 
@@ -148,15 +189,16 @@ function el(tag, attrs = {}, ...kids) {
 }
 
 function renderCounts() {
-  const generated = POSTS.filter((p) => p.images.length).length;
-  const ok = POSTS.filter((p) => reviews[p.id]?.status === "approved").length;
-  const redo = POSTS.filter((p) => reviews[p.id]?.status === "redo").length;
+  const list = shown();
+  const generated = list.filter((p) => p.images.length).length;
+  const ok = list.filter((p) => reviews[p.id]?.status === "approved").length;
+  const redo = list.filter((p) => reviews[p.id]?.status === "redo").length;
   countsEl.replaceChildren(
     el("span", { class: "pill ok" }, `${ok} approved`),
     el("span", { class: "pill redo" }, `${redo} redo`),
-    el("span", { class: "pill" }, `${generated}/30 generated`),
+    el("span", { class: "pill" }, `${generated}/${list.length} generated`),
   );
-  for (const b of document.querySelectorAll(".seg button")) b.setAttribute("aria-pressed", String(b.dataset.q === quality));
+  for (const b of document.querySelectorAll(".seg button")) b.setAttribute("aria-pressed", String(b.dataset.month === month));
 }
 
 function card(p) {
@@ -164,7 +206,7 @@ function card(p) {
   const status = r.status === "approved" ? ["ok", "Approved"] : r.status === "redo" ? ["redo", "Redo"] : ["", p.images.length ? "To review" : "Not made yet"];
   const open = p.images.length
     ? el("div", { class: "open" }, ...p.images.map(([label, url]) => el("a", { href: url, target: "_blank", rel: "noopener" }, label === "Open full size" ? "Open full size ↗" : `${label} ↗`)))
-    : el("div", { class: "open" }, el("span", { class: "none" }, "Generated after you pick the quality"));
+    : el("div", { class: "open" }, el("span", { class: "none" }, "Being generated"));
   const can = Boolean(db) && p.images.length > 0;
   const note = el("textarea", { id: `note-${p.id}`, placeholder: "Note for a redo (optional)", "aria-label": `Note for ${p.date}` });
   note.value = r.note || "";
@@ -188,7 +230,7 @@ function render() {
   const active = document.activeElement?.tagName === "TEXTAREA" ? document.activeElement : null;
   const keep = active && { id: active.id, value: active.value, start: active.selectionStart };
   renderCounts();
-  grid.replaceChildren(...POSTS.map(card));
+  grid.replaceChildren(...shown().map(card));
   if (keep) {
     const t = document.getElementById(keep.id);
     t.value = keep.value;
@@ -213,12 +255,10 @@ async function save(id, patch) {
 }
 
 for (const b of document.querySelectorAll(".seg button")) {
-  b.addEventListener("click", async () => {
-    if (!db || b.dataset.q === quality) return;
-    quality = b.dataset.q;
-    renderCounts();
-    try { await db.doc("settings/batch").set({ quality, updatedAt: Date.now() }); }
-    catch (e) { notice.textContent = `Couldn't save the quality choice (${e.code || "error"}).`; notice.hidden = false; }
+  b.addEventListener("click", () => {
+    month = b.dataset.month;
+    try { localStorage.setItem("approvals-month", month); } catch {}
+    render();
   });
 }
 
@@ -229,7 +269,6 @@ render();
   if (!db) {
     notice.textContent = "Sign in to claude.ai to save approvals. You can still open every post full size.";
     notice.hidden = false;
-    for (const b of document.querySelectorAll(".seg button")) b.disabled = true;
     return;
   }
   render();
@@ -238,9 +277,5 @@ render();
     for (const d of snap.docs) reviews[d.id] = d.data();
     render();
   }, (e) => { notice.textContent = `Live updates stopped (${e.code}). Reload the page.`; notice.hidden = false; });
-  db.doc("settings/batch").onSnapshot((snap) => {
-    quality = snap.exists ? snap.data().quality : null;
-    renderCounts();
-  });
 })();
 </script>
