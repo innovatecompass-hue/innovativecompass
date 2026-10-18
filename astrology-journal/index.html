@@ -47,21 +47,21 @@
           <div class="field-row">
             <label class="field">
               <span class="field-label">First name</span>
-              <input name="firstName" type="text" autocomplete="given-name" maxlength="60" placeholder="Your first name" />
+              <input id="hero-first-name" name="firstName" type="text" autocomplete="given-name" maxlength="60" placeholder="Your first name" />
             </label>
             <label class="field">
               <span class="field-label">Email</span>
-              <input name="email" type="email" autocomplete="email" required placeholder="you@example.com" />
+              <input id="hero-email" name="email" type="email" autocomplete="email" required placeholder="you@example.com" />
             </label>
           </div>
           <div class="field-row">
             <label class="field">
               <span class="field-label">Your Sun sign <em>(optional)</em></span>
-              <select name="sunSign" data-sign-select></select>
+              <select id="hero-sun-sign" name="sunSign" data-sign-select></select>
             </label>
             <button type="submit" class="btn">Get my journal</button>
           </div>
-          <input class="hp" type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true" />
+          <input id="hero-company" class="hp" type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true" />
           <p class="form-error" role="alert" hidden></p>
           <p class="form-note">Free. Instant download. You'll also get the occasional email about reading your chart; unsubscribe anytime.</p>
         </form>
@@ -254,21 +254,21 @@
         <div class="field-row">
           <label class="field">
             <span class="field-label">First name</span>
-            <input name="firstName" type="text" autocomplete="given-name" maxlength="60" placeholder="Your first name" />
+            <input id="final-first-name" name="firstName" type="text" autocomplete="given-name" maxlength="60" placeholder="Your first name" />
           </label>
           <label class="field">
             <span class="field-label">Email</span>
-            <input name="email" type="email" autocomplete="email" required placeholder="you@example.com" />
+            <input id="final-email" name="email" type="email" autocomplete="email" required placeholder="you@example.com" />
           </label>
         </div>
         <div class="field-row">
           <label class="field">
             <span class="field-label">Your Sun sign <em>(optional)</em></span>
-            <select name="sunSign" data-sign-select></select>
+            <select id="final-sun-sign" name="sunSign" data-sign-select></select>
           </label>
           <button type="submit" class="btn">Get my journal</button>
         </div>
-        <input class="hp" type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true" />
+        <input id="final-company" class="hp" type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true" />
         <p class="form-error" role="alert" hidden></p>
         <p class="form-note">Free. Instant download. Unsubscribe anytime.</p>
       </form>
@@ -289,7 +289,7 @@
     <h3>Your journal is ready<span data-name></span>.</h3>
     <p>Download it now and start with your Rising sign. A copy is on its way to your inbox too.</p>
     <a class="btn" data-download href="#" target="_blank" rel="noopener">Download the PDF</a>
-    <p class="form-note" data-preview-note hidden>Preview mode: nothing was saved. The live site sends this to GoHighLevel.</p>
+    <p class="form-note" data-preview-note hidden>Preview mode: nothing was saved. On the live site, this step adds the reader to GoHighLevel and shows the PDF download button.</p>
 
     <div class="upsell">
       <span class="chip chip-pink">Your next chapter</span>

@@ -41,6 +41,7 @@ function showSuccess(form, { downloadUrl, firstName, preview }) {
     const panel = template.content.cloneNode(true);
     panel.querySelector('[data-name]').textContent = firstName ? `, ${firstName}` : '';
     panel.querySelector('[data-download]').href = downloadUrl;
+    panel.querySelector('[data-download]').hidden = !!preview; // no PDF exists in preview mode
     panel.querySelector('[data-preview-note]').hidden = !preview;
     slot.replaceChildren(panel);
   });
@@ -59,6 +60,12 @@ async function submit(form) {
     emailInput.setAttribute('aria-invalid', 'true');
     emailInput.focus();
     showError(form, 'Please enter a valid email address so we can send your journal.');
+    return;
+  }
+
+  // Hosted previews (e.g. a design review link) set window.JOURNAL_PREVIEW and never call the API.
+  if (window.JOURNAL_PREVIEW) {
+    showSuccess(form, { downloadUrl: '#', firstName: data.firstName?.trim(), preview: true });
     return;
   }
 
