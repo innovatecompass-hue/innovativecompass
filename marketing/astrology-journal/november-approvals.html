@@ -1,0 +1,246 @@
+<title>November Post Approvals</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Josefin+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+/* Layout: sticky summary bar, then a calendar of day cards (1 column on phones, 2-3 on desktop). */
+:root {
+  --bg: #fbf6f2; --surface: #ffffff; --ink: #2b2236; --muted: #6e6178; --line: #eadfe6;
+  --teal: #237f79; --teal-soft: #dff3f0; --pink: #c2477f; --pink-soft: #fbe4ee;
+  --lav-soft: #eee7f7; --shadow: 0 10px 28px -20px rgba(43, 34, 54, .55);
+  --display: "Abril Fatface", Georgia, serif;
+  --body: "DM Sans", system-ui, -apple-system, sans-serif;
+  --label: "Josefin Sans", "Avenir Next", sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #18131d; --surface: #241d2b; --ink: #f4eef7; --muted: #b6a9bf; --line: #3a3043;
+    --teal: #7fd6cd; --teal-soft: #1f3a39; --pink: #f3a0c6; --pink-soft: #45263a;
+    --lav-soft: #2f2639; --shadow: 0 10px 28px -20px rgba(0, 0, 0, .8); color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #18131d; --surface: #241d2b; --ink: #f4eef7; --muted: #b6a9bf; --line: #3a3043;
+  --teal: #7fd6cd; --teal-soft: #1f3a39; --pink: #f3a0c6; --pink-soft: #45263a;
+  --lav-soft: #2f2639; --shadow: 0 10px 28px -20px rgba(0, 0, 0, .8); color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font: 15px/1.5 var(--body); margin: 0; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--surface); }
+.gutter { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.wrap { max-width: 1180px; margin: 0 auto; }
+
+.bar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--surface); border-bottom: 1px solid var(--line); }
+.bar .wrap { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 20px; padding-block: 12px; }
+h1 { font: 400 1.5rem/1.1 var(--display); margin: 0; text-wrap: balance; }
+.counts { display: flex; gap: 8px; flex-wrap: wrap; font-variant-numeric: tabular-nums; }
+.pill { font: 600 .72rem/1 var(--label); letter-spacing: .1em; text-transform: uppercase; padding: 6px 10px 5px; border-radius: 999px; background: var(--lav-soft); color: var(--ink); white-space: nowrap; }
+.pill.ok { background: var(--teal-soft); color: var(--teal); }
+.pill.redo { background: var(--pink-soft); color: var(--pink); }
+.quality { display: flex; align-items: center; gap: 8px; margin-left: auto; flex-wrap: wrap; }
+.quality span { font: 600 .72rem var(--label); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.seg { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; overflow: hidden; }
+.seg button { border: 0; background: transparent; color: var(--ink); font: 500 .85rem var(--body); padding: 7px 14px; cursor: pointer; }
+.seg button[aria-pressed="true"] { background: var(--ink); color: var(--surface); }
+
+.intro { padding-block: 18px 6px; color: var(--muted); max-width: 70ch; }
+.intro strong { color: var(--ink); }
+.notice { margin: 10px 0 0; padding: 10px 14px; border-radius: 10px; background: var(--pink-soft); color: var(--ink); }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 16px; padding-block: 16px 48px; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 16px; display: flex; flex-direction: column; gap: 12px; box-shadow: var(--shadow); min-width: 0; }
+.card.ok { border-color: var(--teal); }
+.card.redo { border-color: var(--pink); }
+.head { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.date { font: 600 .8rem var(--label); letter-spacing: .12em; text-transform: uppercase; }
+.setting { font-size: .78rem; color: var(--muted); }
+.head .pill { margin-left: auto; }
+.lines { margin: 0; display: grid; gap: 6px; }
+.lines p { margin: 0; font-size: 1rem; }
+.lines b { font: 600 .7rem var(--label); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-right: 6px; }
+details { font-size: .88rem; color: var(--muted); }
+details summary { cursor: pointer; color: var(--ink); font-weight: 500; }
+details p { margin: 6px 0 0; white-space: pre-line; }
+.open { display: flex; gap: 8px; flex-wrap: wrap; }
+.open a { flex: 1 1 auto; text-align: center; text-decoration: none; font: 600 .78rem/1 var(--label); letter-spacing: .1em; text-transform: uppercase; padding: 12px 14px 11px; border-radius: 10px; background: var(--ink); color: var(--surface); }
+.open a:focus-visible, button:focus-visible, textarea:focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; }
+.open .none { flex: 1; text-align: center; padding: 11px; border-radius: 10px; border: 1px dashed var(--line); color: var(--muted); font-size: .85rem; }
+.review { display: flex; gap: 8px; }
+.review button { flex: 1; border: 1px solid var(--line); background: transparent; color: var(--ink); border-radius: 10px; padding: 10px; font: 500 .9rem var(--body); cursor: pointer; }
+.review button.approve[aria-pressed="true"] { background: var(--teal); border-color: var(--teal); color: var(--surface); }
+.review button.redo[aria-pressed="true"] { background: var(--pink); border-color: var(--pink); color: var(--surface); }
+.review button:disabled { opacity: .5; cursor: not-allowed; }
+textarea { width: 100%; min-height: 44px; resize: vertical; border: 1px solid var(--line); border-radius: 10px; background: var(--bg); color: var(--ink); font: .9rem var(--body); padding: 9px 11px; }
+@media (max-width: 600px) { .quality { margin-left: 0; } .grid { grid-template-columns: 1fr; } }
+@media (prefers-reduced-motion: no-preference) { .card { transition: border-color .2s ease; } }
+</style>
+
+<header class="bar gutter">
+  <div class="wrap">
+    <h1>November posts</h1>
+    <div class="counts" id="counts"></div>
+  </div>
+</header>
+
+<main class="gutter">
+  <div class="wrap">
+    <p class="intro"><strong>Open full size</strong> shows a post fullscreen in a new tab. Approve it or mark it for a redo, with a note if something's off. Claude reads your choices from this page.</p>
+    <p class="notice" id="notice" hidden></p>
+    <div class="grid" id="grid"></div>
+  </div>
+</main>
+
+<script>
+const A = "https://d8j0ntlcm91z4.cloudfront.net/user_3KTjtcnTBQnk5ZC8kTxYiFrjgMf/";
+const B = "https://d8j0ntlcm91z4.cloudfront.net/user_3ENivLOclJVJbkv7uxXpYHS28vy/";
+const TERRACE = "Moon terrace", LOUNGE = "Starship lounge", GARDEN = "Zodiac garden", YACHT = "Space yacht";
+
+// The month's plan. `images` is a list of [label, url]; empty means not generated yet.
+const POSTS = [
+  ["nov-01", "Sun · Nov 1", TERRACE, "It's Scorpio season on Earth.", "Everyone's suddenly a detective.", "Scorpio season is here. Suddenly everyone has theories, a magnifying glass and your ex's new partner's full name. 🔍\nGot Scorpio in your chart? Find out where in the free Astrology Journal (link in bio).\n#scorpioseason #scorpio #astrology #astrologymemes", [["Open full size", B + "hf_20261018_045905_8078d1d0-c375-4e73-bde0-9283aab5e40f.png"], ["High version", B + "hf_20261018_045904_c0cb26ba-27d5-4b79-b470-f7ea40c6062d.png"]]],
+  ["nov-02", "Mon · Nov 2", LOUNGE, "Should we visit Earth this week?", "Not until Mercury goes direct.", "Even the aliens are rescheduling. 🛸\nMercury is retrograde until mid-November. Want to know what Mercury runs in YOUR chart? Free Astrology Journal, link in bio.\n#mercuryretrograde #astrology #astrologymemes", [["Open full size", A + "hf_20261018_041543_dc9aca74-45be-408d-b5b5-319e9a76ca46.png"]]],
+  ["nov-03", "Tue · Nov 3", TERRACE, "What's a Rising sign?", "Their first impression. The rest takes three dates.", "Your Rising sign is the mask you wear when you walk into a room. Your Sun and Moon show up a little later. 😌\nStart with your Rising in the free Astrology Journal. Link in bio.\n#risingsign #ascendant #astrology #bigthree", [["Open full size", A + "hf_20261018_042449_f3e49027-7e63-4ee8-88ea-fcac14a48743.png"]]],
+  ["nov-04", "Wed · Nov 4", TERRACE, "Why is that human texting their ex?", "Mercury retrograde. It's tradition.", "Put the phone down. Or don't, we're not your Saturn. 📱\n#mercuryretrograde #astrology #astrologymemes", [["Open full size", B + "hf_20261018_051143_f8c0e306-42b4-42dd-bb2f-1a7a388b6267.png"]]],
+  ["nov-05", "Thu · Nov 5", TERRACE, "Why are you studying their Moon signs?", "Their Sun signs explain nothing.", "Same Sun sign, completely different person? Blame the Moon. It's who you are at 2 a.m.\nMeet your Moon in the free Astrology Journal. Link in bio. 🌙\n#moonsign #astrology #bigthree #birthchart", [["Open full size", A + "hf_20261018_043446_da1269ef-a5e7-4cc5-bb40-9afaa296aade.png"]]],
+  ["nov-06", "Fri · Nov 6", TERRACE, "That Scorpio hasn't blinked in four minutes.", "They're not angry. They're reading you.", "Tag the Scorpio who knows what you did. They're not mad. They're just taking notes. 👁\n#scorpio #scorpioseason #astrology #astrologymemes", [["Open full size", B + "hf_20261018_051143_fdf291ea-4676-40db-8a33-eb626f4322c3.png"]]],
+  ["nov-07", "Sat · Nov 7", LOUNGE, "Humans only know their Sun sign.", "So they've read one page of their own book.", "Your Sun sign is chapter one. There are nine more planets, twelve houses and a whole story you haven't read yet.\nMeet the rest of you with the free 91-page Astrology Journal. Link in bio. ✨\n#astrology #birthchart #sunsign #astrologyjournal", [["Open full size", A + "hf_20261018_041543_ee573438-756b-47df-9dcb-8630b9e71e69.png"]]],
+  ["nov-08", "Sun · Nov 8", TERRACE, "Their laptop, their phone and their car all broke.", "Mercury retrograde sends its regards.", "Back up your files, double-check that email, and maybe don't sign anything until mid-month. ✉️ (Or blame Mercury. Everyone else is.)\n#mercuryretrograde #astrology #astrologymemes", [["Open full size", B + "hf_20261018_051100_1f3ec2cc-199e-475b-850f-b37762770791.png"]]],
+  ["nov-09", "Mon · Nov 9", TERRACE, "Where is that Pisces?", "Physically here. Emotionally on Neptune.", "Pisces placements, this one's for you. You're not lost, you're on your way back from Neptune. 🌊\nFind your Pisces placements in the free Astrology Journal (link in bio).\n#pisces #neptune #astrology #astrologymemes", [["Open full size", B + "hf_20261018_051059_b6d01629-8b35-4623-aa40-2be38e38746a.png"]]],
+  ["nov-10", "Tue · Nov 10", TERRACE, "That human checked their horoscope eleven times today.", "Gemini Moon. Let them.", "Tag the friend who refreshes their horoscope app like it owes them money. 📱\nA Gemini Moon needs information to feel calm. Find out what yours needs in the free Astrology Journal (link in bio).\n#geminimoon #gemini #astrology #astrologymemes", [["Open full size", A + "hf_20261018_043446_62275e85-f08f-422e-a07f-9db5ab404bcc.png"]]],
+  ["nov-11", "Wed · Nov 11", GARDEN, "What's a house in astrology?", "The room where the drama happens.", "The planets are the actors, the signs are the costumes, and the houses are the stage. 🎭\nWhich room does YOUR drama happen in? The houses chapter is in the free Astrology Journal (link in bio).\n#astrologyhouses #astrology #birthchart", [["Open full size", B + "hf_20261018_051217_72fa4454-3856-4dfa-907b-11e8a083da7d.png"]]],
+  ["nov-12", "Thu · Nov 12", GARDEN, "That human is crying at a commercial.", "Cancer Moon. It was a very good commercial.", "Cancer Moons don't cry easily. They cry accurately. 🥲\nTag the friend who cried at a car commercial.\n#cancermoon #cancer #astrology #astrologymemes", [["Open full size", B + "hf_20261018_051217_c9f8244d-87a8-4095-9ab5-75518c85455c.png"]]],
+  ["nov-13", "Fri · Nov 13", GARDEN, "Mercury went direct today.", "So humans can blame themselves again.", "Mercury is direct again. Your tech is fine. Your ex is blocked. You have no excuses left. ✨\n#mercurydirect #mercuryretrograde #astrology\n(Check the exact date before posting.)", [["Open full size", B + "hf_20261018_051249_f9df8182-064b-4b60-9650-c394abe63d13.png"]]],
+  ["nov-14", "Sat · Nov 14", TERRACE, "Why does that human keep dating the same person?", "Different face. Same Venus pattern.", "If your exes could start a group chat, your Venus sign would be the admin. 💌\nVenus shows what you're drawn to, and why the pattern repeats. Read yours in the free Astrology Journal. Link in bio.\n#venus #venussign #astrology #dating", [["Open full size", A + "hf_20261018_043445_6aa7b43f-baf8-48c0-8a55-fd90684dd16d.png"]]],
+  ["nov-15", "Sun · Nov 15", GARDEN, "That human started three projects today.", "Aries. They'll finish one. Probably.", "Aries energy: starting is the fun part. 🔥\nTag the Aries with 14 open tabs and 3 new hobbies.\n#aries #astrology #astrologymemes", [["Open full size", B + "hf_20261018_051249_96a1a015-a712-4d8a-a89e-56f98eeb59bb.png"]]],
+  ["nov-16", "Mon · Nov 16", GARDEN, "Why won't that Taurus leave the restaurant?", "Dessert is a love language.", "A Taurus never \"just gets a coffee.\" It's an experience. 🍰\nWhat does your Venus sign say about how you treat yourself? Free journal, link in bio.\n#taurus #astrology #astrologymemes", [["Open full size", B + "hf_20261018_051322_6330512a-859d-4137-9110-675e8d10a0db.png"]]],
+  ["nov-17", "Tue · Nov 17", LOUNGE, "Why is that human crying in a parking lot?", "They turned 29. Saturn found them.", "If you're between 27 and 30 and everything feels like a test, it's your Saturn return.\nIt's hard. It's also where you level up. The Saturn chapter is in your free Astrology Journal (link in bio). 🪐\n#saturnreturn #astrology #turning29", [["Open full size", A + "hf_20261018_041543_9e5a523a-300a-4ad8-8075-77d44fda39c8.png"]]],
+  ["nov-18", "Wed · Nov 18", GARDEN, "That Virgo reorganized our spaceship.", "Twice. It's better now.", "Every friend group needs one Virgo. Every spaceship too. 📋\nTag your Virgo.\n#virgo #astrology #astrologymemes", [["Open full size", B + "hf_20261018_051059_f99559a1-b1e5-4d54-a6fe-3796750d79a3.png"]]],
+  ["nov-19", "Thu · Nov 19", GARDEN, "What's a North Node?", "The direction they keep avoiding.", "Your North Node points to where you're growing. Your South Node is the comfort zone. Guess which one you keep choosing. 🧭\nFind your Nodes in the free Astrology Journal (link in bio).\n#northnode #astrology #birthchart", [["Open full size", B + "hf_20261018_051100_f183583e-eafe-4e82-b674-316b4ce6bf6e.png"]]],
+  ["nov-20", "Fri · Nov 20", GARDEN, "Why is that human sparkling?", "Leo Rising. They walked in that way.", "A Leo Rising doesn't enter a room. They arrive. ✨\nYour Rising sign is the first chapter of your journal (link in bio).\n#leorising #leo #astrology", [["Open full size", B + "hf_20261018_051322_002b0eb7-0445-481e-b29a-56ee5ada40a2.png"]]],
+  ["nov-21", "Sat · Nov 21", GARDEN, "That Libra has been choosing a restaurant for an hour.", "They're weighing all 47 options.", "Libras aren't indecisive. They're fair to every option. All 47 of them. ⚖️\nTag the Libra who picks the restaurant.\n#libra #astrology #astrologymemes", [["Open full size", B + "hf_20261018_051358_b49108e7-a456-4a3a-b71e-860d7c89662d.png"]]],
+  ["nov-22", "Sun · Nov 22", YACHT, "It's Sagittarius season.", "Every human just booked a flight.", "Happy Sagittarius season. Pack light, say yes, and maybe check your bank balance first. ✈️\n#sagittariusseason #sagittarius #astrology", [["Open full size", B + "hf_20261018_051357_a3d3bdfe-f42b-460e-ba8f-e6d7acc0b723.png"]]],
+  ["nov-23", "Mon · Nov 23", YACHT, "Does that Capricorn ever rest?", "They scheduled it for 2031.", "Capricorns don't take breaks. They schedule them. For later. Much later. 📅\nTag a Capricorn who needs a nap.\n#capricorn #astrology #astrologymemes", [["Open full size", B + "hf_20261018_051413_5e54fbf1-d5e5-4908-8037-3d0167615823.png"]]],
+  ["nov-24", "Tue · Nov 24", YACHT, "Why is everyone so dramatic tonight?", "Full Moon. Give them space.", "Full Moon tonight. Feelings are louder, sleep is shorter, texts are longer. 🌕 Be gentle with yourself.\n#fullmoon #astrology\n(Check the Full Moon date before posting.)", [["Open full size", B + "hf_20261018_051414_bc835ce4-ac60-47a9-ad8c-37f9c9a6696a.png"]]],
+  ["nov-25", "Wed · Nov 25", YACHT, "That Gemini changed their mind mid-sentence.", "Twice. That's a slow day.", "Geminis don't change their minds. They update them. Frequently. 💬\nTag your favorite Gemini.\n#gemini #astrology #astrologymemes", [["Open full size", B + "hf_20261018_051439_063e8528-a0b3-462c-9124-8b370911cc3a.png"]]],
+  ["nov-26", "Thu · Nov 26", YACHT, "Why are humans arguing at dinner?", "Twelve Mars signs. One turkey.", "Happy Thanksgiving to every table with an Aries, a Scorpio and one very tired Libra trying to keep the peace. 🦃\n#thanksgiving #astrology #astrologymemes", [["Open full size", B + "hf_20261018_051440_dbac3713-3930-408f-ad6f-5ed5c0324ad2.png"]]],
+  ["nov-27", "Fri · Nov 27", YACHT, "Why is that human buying four lamps?", "Venus in Taurus. And a sale.", "Venus in Taurus doesn't shop. It curates. 🛍️\nWant to know what your Venus sign spends on? The free Astrology Journal is the only free thing today (link in bio).\n#blackfriday #venus #taurus #astrology", [["Open full size", B + "hf_20261018_051457_cf2007da-3384-4963-8036-797f7101615c.png"]]],
+  ["nov-28", "Sat · Nov 28", YACHT, "That Aquarius says they're not like other humans.", "We checked. They're right.", "To every Aquarius who says they're not like other humans: we checked. You're right. 👽\n#aquarius #astrology #astrologymemes", [["Open full size", B + "hf_20261018_051456_b92356ee-8e76-4e31-a5b8-1c53e09c7e61.png"]]],
+  ["nov-29", "Sun · Nov 29", YACHT, "That Sagittarius said they'd be right back.", "In 2019.", "A Sagittarius \"be right back\" can last a few years. 🌍\nTag the friend who's always somewhere else.\n#sagittarius #astrology #astrologymemes", [["Open full size", B + "hf_20261018_051521_1a337d8e-5c5e-44e2-849e-5f9c5d8bfd6a.png"]]],
+  ["nov-30", "Mon · Nov 30", YACHT, "How do humans learn their whole chart?", "There's a free journal. Ninety-one pages.", "You've met your Sun sign. Now meet the other nine planets, the twelve houses and your Nodes. 📖\nThe 91-page Astrology Journal is free. Link in bio.\n#astrologyjournal #birthchart #astrology", [["Open full size", B + "hf_20261018_051520_654aca9a-b553-49cf-a192-e6fc8e90093e.png"]]],
+].map(([id, date, setting, left, right, caption, images]) => ({ id, date, setting, left, right, caption, images }));
+
+const grid = document.getElementById("grid");
+const countsEl = document.getElementById("counts");
+const notice = document.getElementById("notice");
+let reviews = {};
+let quality = null;
+let db = null;
+const pending = {}; // one write at a time per document
+
+function el(tag, attrs = {}, ...kids) {
+  const n = document.createElement(tag);
+  for (const [k, v] of Object.entries(attrs)) {
+    if (k === "class") n.className = v; else if (k.startsWith("on")) n.addEventListener(k.slice(2), v); else n.setAttribute(k, v);
+  }
+  for (const k of kids) if (k != null) n.append(k);
+  return n;
+}
+
+function renderCounts() {
+  const generated = POSTS.filter((p) => p.images.length).length;
+  const ok = POSTS.filter((p) => reviews[p.id]?.status === "approved").length;
+  const redo = POSTS.filter((p) => reviews[p.id]?.status === "redo").length;
+  countsEl.replaceChildren(
+    el("span", { class: "pill ok" }, `${ok} approved`),
+    el("span", { class: "pill redo" }, `${redo} redo`),
+    el("span", { class: "pill" }, `${generated}/30 generated`),
+  );
+  for (const b of document.querySelectorAll(".seg button")) b.setAttribute("aria-pressed", String(b.dataset.q === quality));
+}
+
+function card(p) {
+  const r = reviews[p.id] || {};
+  const status = r.status === "approved" ? ["ok", "Approved"] : r.status === "redo" ? ["redo", "Redo"] : ["", p.images.length ? "To review" : "Not made yet"];
+  const open = p.images.length
+    ? el("div", { class: "open" }, ...p.images.map(([label, url]) => el("a", { href: url, target: "_blank", rel: "noopener" }, label === "Open full size" ? "Open full size ↗" : `${label} ↗`)))
+    : el("div", { class: "open" }, el("span", { class: "none" }, "Generated after you pick the quality"));
+  const can = Boolean(db) && p.images.length > 0;
+  const note = el("textarea", { id: `note-${p.id}`, placeholder: "Note for a redo (optional)", "aria-label": `Note for ${p.date}` });
+  note.value = r.note || "";
+  note.disabled = !db;
+  note.addEventListener("change", () => save(p.id, { note: note.value.trim() }));
+  return el("article", { class: `card ${status[0]}` },
+    el("div", { class: "head" }, el("span", { class: "date" }, p.date), el("span", { class: "setting" }, p.setting), el("span", { class: `pill ${status[0]}` }, status[1])),
+    el("div", { class: "lines" }, el("p", {}, el("b", {}, "Lyra"), `“${p.left}”`), el("p", {}, el("b", {}, "Vela"), `“${p.right}”`)),
+    open,
+    el("div", { class: "review" },
+      el("button", { type: "button", id: `ok-${p.id}`, class: "approve", "aria-pressed": String(r.status === "approved"), onclick: () => save(p.id, { status: r.status === "approved" ? null : "approved" }) }, "Approve"),
+      el("button", { type: "button", id: `redo-${p.id}`, class: "redo", "aria-pressed": String(r.status === "redo"), onclick: () => save(p.id, { status: r.status === "redo" ? null : "redo" }) }, "Redo"),
+    ),
+    note,
+    el("details", {}, el("summary", {}, "Caption"), el("p", {}, p.caption)),
+  );
+}
+
+function render() {
+  // Keep an unsaved note (and its cursor) when a live update redraws the cards.
+  const active = document.activeElement?.tagName === "TEXTAREA" ? document.activeElement : null;
+  const keep = active && { id: active.id, value: active.value, start: active.selectionStart };
+  renderCounts();
+  grid.replaceChildren(...POSTS.map(card));
+  if (keep) {
+    const t = document.getElementById(keep.id);
+    t.value = keep.value;
+    t.focus();
+    t.setSelectionRange(keep.start, keep.start);
+  }
+  for (const b of grid.querySelectorAll(".review button")) {
+    const id = b.id.replace(/^(ok|redo)-/, "");
+    b.disabled = !db || !POSTS.find((p) => p.id === id).images.length;
+  }
+}
+
+async function save(id, patch) {
+  if (!db) return;
+  const next = { ...(reviews[id] || {}), ...patch, updatedAt: Date.now() };
+  reviews[id] = next;
+  render();
+  pending[id] = (pending[id] || Promise.resolve()).then(() => db.collection("reviews").doc(id).set(next)).catch((e) => {
+    notice.textContent = `Couldn't save that choice (${e.code || "error"}). Try again in a moment.`;
+    notice.hidden = false;
+  });
+}
+
+for (const b of document.querySelectorAll(".seg button")) {
+  b.addEventListener("click", async () => {
+    if (!db || b.dataset.q === quality) return;
+    quality = b.dataset.q;
+    renderCounts();
+    try { await db.doc("settings/batch").set({ quality, updatedAt: Date.now() }); }
+    catch (e) { notice.textContent = `Couldn't save the quality choice (${e.code || "error"}).`; notice.hidden = false; }
+  });
+}
+
+render();
+
+(async () => {
+  db = await window.claude?.use?.("db");
+  if (!db) {
+    notice.textContent = "Sign in to claude.ai to save approvals. You can still open every post full size.";
+    notice.hidden = false;
+    for (const b of document.querySelectorAll(".seg button")) b.disabled = true;
+    return;
+  }
+  render();
+  db.collection("reviews").onSnapshot((snap) => {
+    reviews = {};
+    for (const d of snap.docs) reviews[d.id] = d.data();
+    render();
+  }, (e) => { notice.textContent = `Live updates stopped (${e.code}). Reload the page.`; notice.hidden = false; });
+  db.doc("settings/batch").onSnapshot((snap) => {
+    quality = snap.exists ? snap.data().quality : null;
+    renderCounts();
+  });
+})();
+</script>
