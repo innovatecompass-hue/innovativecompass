@@ -17,7 +17,9 @@ Static site — HTML, CSS, and a small amount of JavaScript. No build step.
 ├── services.html    # Services page
 ├── styles.css       # Design system + all page styles
 ├── main.js          # Scroll-reveal animations
-└── assets/          # Images (drop logo.png here)
+├── assets/          # Images (drop logo.png here)
+├── astrology-journal/  # Lead-magnet landing page with its own design (see its README)
+└── api/             # Vercel functions (journal-signup → GoHighLevel)
 ```
 
 ## Local preview
