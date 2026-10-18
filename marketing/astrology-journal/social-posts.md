@@ -56,6 +56,47 @@ Mercury retrograde happens about three times a year. Want to know what Mercury a
 
 ---
 
+## Planet cards: the view from Vela & Lyra's lounge
+
+No characters. One planet fills the art-deco window, with the planet's name and a one-line meaning on a white card. These pair with the "Meet Your Planets" emails: post the card the same week the email goes out, or put all ten in one carousel.
+
+### Mercury
+**On-image text:** "MERCURY" / "How you think, talk and learn."
+**Higgsfield job:** `967fab08-9bbe-4e66-8954-02e95452ae35`
+
+**Caption:**
+Mercury runs your mind: how you think, talk, learn and make sense of the world. Some Mercurys think out loud. Some need three days of silence before they say a word.
+
+What does yours do? Find out in the free Astrology Journal (link in bio). ☿
+
+#mercury #mercuryretrograde #astrology #birthchart #astrologyjournal
+
+### Venus
+**On-image text:** "VENUS" / "What you love, and what you let yourself have."
+**Higgsfield job:** `f11b84e5-0330-4268-87a9-88e62bea8135`
+
+**Caption:**
+Venus isn't only about romance. It's what you find beautiful, what you value, how you spend money and how you like to be loved.
+
+Your Venus sign is your love language, written in the sky. Read yours in the free Astrology Journal (link in bio). ♀
+
+#venus #lovelanguage #astrology #birthchart #astrologyjournal
+
+### Saturn
+**On-image text:** "SATURN" / "Your hardest lesson. Your greatest strength."
+**Higgsfield job:** `71f25c95-5185-40b0-9937-076839ccb5d5`
+
+**Caption:**
+Saturn is the strict teacher of the zodiac. Wherever it sits in your chart is where life makes you earn it the slow way.
+
+It's also where you end up the most skilled. The thing you struggled with at 20 is often what you're known for at 40. Find your Saturn in the free Astrology Journal (link in bio). 🪐
+
+#saturn #saturnreturn #astrology #birthchart #astrologyjournal
+
+**Still to make for the full set:** Sun, Moon, Mars, Jupiter, Uranus, Neptune, Pluto (same prompt, swap the planet and the line; the lines are the email subjects).
+
+---
+
 ## Next ones to make
 
 - "I'm studying their Moon signs." / "Why?" / "Their Sun signs explain nothing."
