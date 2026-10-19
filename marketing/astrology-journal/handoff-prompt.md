@@ -41,6 +41,6 @@ You're picking up the Circle of Stars Instagram (@circleofstars.app) content pip
   - Saturn direct Dec 10. Jupiter retrograde Dec 12. Venus shadow clears Dec 15.
   - Sun enters Capricorn Dec 21, 2:59 PM. Full Moon in Cancer Dec 23, 7:28 PM. Mercury enters Capricorn Dec 25.
   - Mars retrograde Jan 10, 2027.
-- Open blocker to remind me about: the landing page isn't public yet. It needs a Vercel import of `astrology-journal/` plus the GHL_API_KEY, GHL_LOCATION_ID and JOURNAL_PDF_URL env vars, which I add myself (never ask me for credentials). Until then "link in bio" goes nowhere; set the IG bio link once it's live.
+- Landing page: lives inside the Circle of Stars app (repo `innovatecompass-hue/constellate`, `public/journal/`) at https://www.circleofstars.app/journal. It goes live when branch `claude/gracious-babbage-qn3ysq` is merged to main and GHL_API_KEY, GHL_LOCATION_ID (and optionally JOURNAL_PDF_URL) are set in the Vercel project `constellate`, which I do myself (never ask me for credentials). IG bio link: `https://www.circleofstars.app/journal?utm_source=instagram&utm_medium=social&utm_campaign=vela-lyra`. Only share www.circleofstars.app links; the vercel.app address sits behind Vercel login.
 - Push only to `claude/gracious-babbage-qn3ysq`. No PRs unless I ask.
 - Proactive, short replies. Show, don't narrate.
