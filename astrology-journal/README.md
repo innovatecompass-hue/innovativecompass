@@ -1,5 +1,7 @@
 # Astrology Journal: lead-magnet landing page
 
+> **Live version:** this page now ships inside the Circle of Stars app (repo `innovatecompass-hue/constellate`, folder `public/journal/`, endpoint `src/app/api/journal-signup/route.ts`) at https://www.circleofstars.app/journal. Make changes there; this folder is the original design source.
+
 A standalone landing page with its own design (pastel sky gradients, Abril Fatface, Josefin Sans, Cormorant Garamond) taken from the journal itself. It shares nothing with the main Innovative Compass styles and deploys as its own Vercel project, `astrology-journal`, with this folder as the Root Directory.
 
 Visitors leave a first name, email and (optionally) their Sun sign. `api/journal-signup.js` saves them to GoHighLevel, and the page hands back the PDF download plus a next step: Circle of Stars.
@@ -46,7 +48,7 @@ Open http://localhost:4823/. With no API running, the form shows the thank-you s
 
 ## Circle of Stars upsell
 
-The thank-you screen offers Circle of Stars (link tagged `utm_source=astrology-journal`). The link points to `constellate-livid.vercel.app/welcome`; update it in `index.html` once Circle of Stars has its own domain.
+The thank-you screen offers Circle of Stars (link tagged `utm_source=astrology-journal`). The link points to `www.circleofstars.app/welcome` (in the live app it is the relative `/welcome`).
 
 ## Testimonials
 

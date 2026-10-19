@@ -44,7 +44,7 @@ Here it is: your 91-page Astrology Journal.
 
 One tip before you dive in: don't read it front to back in one sitting. Start with your Rising sign, the mask you wear, and come back for one chapter at a time. It's a journey, not a textbook.
 
-You'll need your birth chart for this. Grab your birth date, place and, if you can, the exact time (a birth certificate or a parent's memory works). Pop them into any free chart calculator, or into [Circle of Stars](https://constellate-livid.vercel.app/welcome?utm_source=email&utm_medium=nurture&utm_campaign=meet-your-planets&utm_content=e00-welcome), which even shows you what changes if you don't know your birth time. Keep the chart next to your journal.
+You'll need your birth chart for this. Grab your birth date, place and, if you can, the exact time (a birth certificate or a parent's memory works). Pop them into any free chart calculator, or into [Circle of Stars](https://www.circleofstars.app/welcome?utm_source=email&utm_medium=nurture&utm_campaign=meet-your-planets&utm_content=e00-welcome), which even shows you what changes if you don't know your birth time. Keep the chart next to your journal.
 
 Over the next few weeks I'll send you a short note about each planet: what it runs in your life, one question to journal on and one side quest. Ten planets, ten little doors.
 
@@ -140,7 +140,7 @@ A Venus in Taurus falls in love over a long dinner. A Venus in Aquarius falls in
 
 **Side quest:** Look up the Venus sign of someone you love. Read their Venus page in your journal and notice what suddenly makes sense.
 
-Want to see your Venus next to theirs, and everyone else's in your life? That's exactly what [Circle of Stars](https://constellate-livid.vercel.app/welcome?utm_source=email&utm_medium=nurture&utm_campaign=meet-your-planets&utm_content=e04-venus) does. Free to start.
+Want to see your Venus next to theirs, and everyone else's in your life? That's exactly what [Circle of Stars](https://www.circleofstars.app/welcome?utm_source=email&utm_medium=nurture&utm_campaign=meet-your-planets&utm_content=e04-venus) does. Free to start.
 
 miranda xoxo
 
@@ -279,7 +279,7 @@ Remember: your chart doesn't decide your life. You do. Astrology just hands you 
 
 **Side quest:** Reread the first page you wrote in your journal. What would you tell that version of you now?
 
-**Your next chapter:** now that you know your own chart, meet the charts of the people you love. [Circle of Stars](https://constellate-livid.vercel.app/welcome?utm_source=email&utm_medium=nurture&utm_campaign=meet-your-planets&utm_content=e10-pluto) puts them side by side with you: their charts, their strengths and what you could create together. Free to start.
+**Your next chapter:** now that you know your own chart, meet the charts of the people you love. [Circle of Stars](https://www.circleofstars.app/welcome?utm_source=email&utm_medium=nurture&utm_campaign=meet-your-planets&utm_content=e10-pluto) puts them side by side with you: their charts, their strengths and what you could create together. Free to start.
 
 I believe in you, always.
 
