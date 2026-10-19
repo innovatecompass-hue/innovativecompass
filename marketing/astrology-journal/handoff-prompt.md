@@ -6,22 +6,21 @@ Paste everything below the line into a new chat.
 
 You're picking up the Circle of Stars Instagram (@circleofstars.app) content pipeline for Innovative Compass. Everything lives in GitHub repo `innovatecompass-hue/innovativecompass`, branch `claude/gracious-babbage-qn3ysq` (NOT main). Check out that branch first, then read:
 
-- `marketing/astrology-journal/metricool-queue.json`: the 46 posts still to schedule (Nov 12, 13, 15, 19 to 30, and all of December). Each entry has `date` and a ready `info` object for Metricool `createScheduledPost` (send `info` as a JSON string). Date-check notes are already stripped; `note` fields flag special days.
+- `marketing/astrology-journal/metricool-queue.json`: the queue. November is fully scheduled (`status: "scheduled"` with Metricool ids); the 31 December posts are `to_schedule`. Each entry has `date` and a ready `info` object for Metricool `createScheduledPost` (send `info` as a JSON string). Date-check notes are already stripped; `note` fields flag special days.
 - `marketing/astrology-journal/approvals.html`: source of truth for all 61 posts. POSTS array is `[id, date, setting, leftBubble, rightBubble, caption, images]`.
 - `marketing/astrology-journal/social-posts.md`: character bible (Vela & Lyra), voice, how to make more.
 
 **Metricool**
 - Brand "Circle of stars", blogId `7521933`, timezone America/Chicago, Instagram only. NEVER touch the other brands in the account (Pennington 3858912, Dr. Indeyeva 7384033 are clients).
-- Already scheduled, don't duplicate: Nov 1 to 11, 14, 16, 17, 18, all 10:00 AM CT. Always run `getScheduledPosts` for Nov 1 to Dec 31 first and skip any date that already has a post.
+- Already scheduled, don't duplicate: all of November (Nov 1 to 30), 10:00 AM CT daily. Always run `getScheduledPosts` for Nov 1 to Dec 31 first and skip any date that already has a post.
 - Slot: 10:00 AM CT daily (Metricool best-time data: 10:00 is the top hour every day). Instagram POST, `isAiGenerated: true`, `autoPublish: true`.
-- Before batching, ask me to confirm the Metricool connector's "Create Scheduled Post" tool is set to always allowed at claude.ai/customize/connectors. Otherwise every post needs a manual approval. Then schedule in parallel batches of about 8 and verify with `getScheduledPosts`.
+- The Metricool connector's "Create Scheduled Post" tool is set to always allowed (claude.ai/customize/connectors). If prompts come back per post, tell me to recheck that setting. Schedule in parallel batches of about 8 and verify with `getScheduledPosts`.
 
 **Order of work**
-1. Schedule the 15 remaining November posts from the queue.
-2. Check approvals. The approval page Artifact https://claude.ai/artifact/U6jTL7dKkc5hS5UBi8cJnX stores reviews in its db collection `reviews`, keyed by post id like `dec-05`, shaped `{status: "approved" | "redo", note}`. Read it. If it's empty, tell me and ask whether to schedule December unreviewed.
-3. Redo any "redo" posts in Higgsfield (see below), update the image URL in approvals.html and the queue, republish the approval Artifact.
-4. Dec 18 is the official launch day (free journal plus the Circle of Stars upsell). Draft a launch-announcement caption and two bubble lines for dec-18 for me to approve, generate its image, then schedule. Backup launch window: Dec 9, 9 AM to 3 PM CT.
-5. Schedule December. Mark each queue entry `"status": "scheduled"` with its Metricool post id, then commit and push to the branch.
+1. Check approvals. The approval page Artifact https://claude.ai/artifact/U6jTL7dKkc5hS5UBi8cJnX stores reviews in its db collection `reviews`, keyed by post id like `dec-05`, shaped `{status: "approved" | "redo", note}`. Read it. If it's empty, tell me and ask whether to schedule December unreviewed.
+2. Redo any "redo" posts in Higgsfield (see below), update the image URL in approvals.html and the queue, republish the approval Artifact.
+3. Dec 18 is the official launch day (free journal plus the Circle of Stars upsell). Draft a launch-announcement caption and two bubble lines for dec-18 for me to approve, generate its image, then schedule. Backup launch window: Dec 9, 9 AM to 3 PM CT.
+4. Schedule December. Mark each queue entry `"status": "scheduled"` with its Metricool post id, then commit and push to the branch.
 
 **Images (Higgsfield)**
 - Use OUR Higgsfield account only, never the client workspace.
